@@ -10,7 +10,7 @@
 
 > _(Trocar os valores conforme o nome real do dispositivo — normalmente `/dev/sr0`)_
 
-`dd if=/dev/sr0 of=rhel10.iso bs=1M`
+`dd if=/dev/sr0 of=/rhel10.iso bs=1M`
 
 
 ![[Pasted image 20251126030904.png]]
