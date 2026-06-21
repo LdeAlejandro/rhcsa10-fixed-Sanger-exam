@@ -17,7 +17,7 @@ ctrl+x
 mount -o remount,rw /        # Remonta o filesystem raiz (/) como leitura-e-escrita
 passwd                        # Altera a senha do usuário root
 
-touch .autorelabel            # Solicita relabeling do SELinux no próximo boot
+touch /.autorelabel            # Solicita relabeling do SELinux no próximo boot
 exec /usr/lib/systemd/systemd # Reiniciar
 ```
 
