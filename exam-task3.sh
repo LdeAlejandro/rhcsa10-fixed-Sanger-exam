@@ -7,13 +7,14 @@ else
 fi
 TOTAL=$(( TOTAL + 10 ))
 
-if ls -Z /repo 2>/dev/null | grep httpd_sys_content_t &>/dev/null
+if findmnt -n /repo | grep -q iso9660
 then
-	echo -e "\033[32m[OK]\033[0m\t\t the /repo directory has the right SELinux label"
-        SCORE=$(( SCORE + 10 ))
+	echo -e "\033[32m[OK]\033[0m\t\t /repo is persistently mounted from an ISO image"
+	SCORE=$(( SCORE + 10 ))
 else
-        echo -e "\033[31m[FAIL]\033[0m\t\t the /repo directory doesn't have the right SELinux label"
+	echo -e "\033[31m[FAIL]\033[0m\t\t /repo is not mounted from an ISO image"
 fi
+
 TOTAL=$(( TOTAL + 10 ))
 
 if grep DocumentRoot.*/repo /etc/httpd/conf/httpd.conf &>/dev/null
