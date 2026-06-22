@@ -31,6 +31,8 @@ ON SERVER 1
 ```bash
 #cehck server2 mounts form server1
 showmount -e server2
+
+#
 dnf install -y nfs-utils
 dnf install -y autofs
 ```
