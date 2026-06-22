@@ -9,7 +9,7 @@ dnf install nfs-utils
 
 vim /etc/exports
 
-	/homes*(rw,no_root_squash)
+	/homes *(rw,no_root_squash)
 
 systemctl enable --now nfs-server
 
