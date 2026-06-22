@@ -60,6 +60,7 @@ swapon -a
 e verificar memoria swap
 
 swapon
+
 free -m 
 
 
