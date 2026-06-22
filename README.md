@@ -130,6 +130,16 @@
 - Next, move /tmp/hosts to the directory /var/www/html/hosts and ensure this file can be accessed by the Apache web server.
 
 ---
+## Task 13: Managing SSH Access
+
+### Requirements
+
+- Configure SSH key-based authentication between `server1` and `server2`.
+- The authentication must use an SSH key protected with a passphrase.
+- Ensure that the `root` user on `server1` can log in to `server2` without being prompted for a password or passphrase.
+- The login process must complete automatically after the initial configuration.
+
+---
 
 ## Task 14: Finding Files
 
