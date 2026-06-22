@@ -6,7 +6,7 @@
 vim /etc/chrony.conf
 
 #change pool 2.rhel.pool.ntp.org iburst to:
-pool.ntp.org
+pool pool.ntp.org
 ```
 
 ```bash
