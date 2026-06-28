@@ -65,50 +65,26 @@ userrepo
 
 ```bash
 flatpak install --user userrepo org.gimp.GIMP -y
-```
 
-### Verify the installation
-
-```bash
+#Verify the installation
 flatpak list --user
 ```
 
 Expected output should include:
 
-```text
+```bash
 org.gimp.GIMP
-```
 
-### Optional verification from root
-
-```bash
-exit
-
+#Optional verification from root
 runuser -u chisha -- flatpak list --user
-```
-
-Expected output should include:
-
-```text
-GIMP
-```
-
-### Verify that the repository is only available to chisha
-
-```bash
 runuser -u chisha -- flatpak remotes --user
 ```
 
 Expected output:
 
-```text
-userrepo
-```
-
-### Verify that no system-wide Flatpak repository exists
-
 ```bash
+userrepo
+### Verify that no system-wide Flatpak repository exists
 flatpak remotes
 ```
 
-The repository should not appear as a system repository.
