@@ -28,22 +28,87 @@ ls -Z mydb/
 
 ```
 
-Flatpak
-
-in case the user needs temporary sudoer
+---
+### Install Flatpak
 
 ```bash
-dnf install flatpak
+sudo -i
+
+dnf install -y flatpak
+```
+
+### Switch to user chisha
+
+```bash
+su - chisha
+```
+
+### Add the Flatpak repository for this user only
+
+```bash
 flatpak remote-add --user userrepo https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak remote
 ```
+
+### Verify the repository
 
 ```bash
-flatpak install -u gimp
-
-option 10
+flatpak remotes --user
 ```
+
+Expected output should include:
+
+```text
+userrepo
+```
+
+### Install GIMP for this user only
 
 ```bash
-flatpak list
+flatpak install --user userrepo org.gimp.GIMP -y
 ```
+
+### Verify the installation
+
+```bash
+flatpak list --user
+```
+
+Expected output should include:
+
+```text
+org.gimp.GIMP
+```
+
+### Optional verification from root
+
+```bash
+exit
+
+runuser -u chisha -- flatpak list --user
+```
+
+Expected output should include:
+
+```text
+GIMP
+```
+
+### Verify that the repository is only available to chisha
+
+```bash
+runuser -u chisha -- flatpak remotes --user
+```
+
+Expected output:
+
+```text
+userrepo
+```
+
+### Verify that no system-wide Flatpak repository exists
+
+```bash
+flatpak remotes
+```
+
+The repository should not appear as a system repository.
