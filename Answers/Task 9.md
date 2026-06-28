@@ -46,7 +46,7 @@ flatpak remotes --user
 
 # install gimp only for chisha
 
-flatpak install --user userrepo org.gimp.GIMP
+flatpak install --user gimp
 
 # verify installation
 
@@ -58,5 +58,4 @@ exit
 
 runuser -u chisha -- flatpak list --user
 ```
-# option 10
 
