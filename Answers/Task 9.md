@@ -36,6 +36,8 @@ dnf install flatpak
 
 # add repository only for chisha
 
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 su - chisha
 
 flatpak remote-add --user userrepo https://dl.flathub.org/repo/flathub.flatpakrepo
